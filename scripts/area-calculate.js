@@ -62,8 +62,14 @@ function calculateParallelogramArea(){
 function calculateEllipseArea(){
     const majorRadius = getInputValue('ellipse-major-radius');
     const minorRadius = getInputValue('ellipse-minor-radius');
-    const ellipseResult = 3.14 * majorRadius * minorRadius;
-    setElementInnerText('ellipse-area', ellipseResult)
+
+    if(isNaN(majorRadius) || isNaN(minorRadius)){
+        alert('Please type a number');
+        return;
+    }
+    const ellipseTwoDecimal = 3.14 * majorRadius * minorRadius;
+    const ellipseResult = ellipseTwoDecimal.toFixed(2);
+    setElementInnerText('ellipse-area', ellipseResult);
 }
 // --------------------------------------------------------------
 
