@@ -19,6 +19,7 @@
         <div class="flex flex-col lg:flex-row">
             <!-- Shap Container -->
             <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
                 <!-- Triangle Card -->
                 <div class="card w-96 bg-base-100 shadow-xl">
                     <figure><img src="/images/triangle.png" alt="Shoes" /></figure>
@@ -43,6 +44,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Rectangle Card -->
                 <div class="card w-96 bg-base-100 shadow-xl">
                     <figure><img src="/images/rectangle.png" alt="Shoes" /></figure>
@@ -52,12 +54,12 @@
                         <p>
                             <!-- Rectangle width Field -->
                             <input placeholder="width" type="text"
-                                class="border text-xl w-24 px-3 py-1 bg-gray-200 rounded" name="" id="triangle-width">
+                                class="border text-xl w-24 px-3 py-1 bg-gray-200 rounded" name="" id="rectangle-width">
                             <span class="ml-3 font-bold">cm</span>
                             <!-- Rectangle length field -->
                             <input placeholder="length" type="text"
                                 class="ml-3 border text-xl w-24 px-3 py-1 bg-gray-200 rounded" name=""
-                                id="triangle-length">
+                                id="rectangle-length">
                             <span class="ml-3 font-bold">cm</span>
                         </p>
                         <p class="text-2xl font-medium">Area: <span id="rectangle-area" class="text-green-600"></span>
@@ -67,6 +69,65 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Parallelogram Card -->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure><img src="/images/parallelogram.png" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title font-bold">Parallelogram</h2 >
+                        <p>Area (A) = b X h</p>
+                        <p>
+                            <!-- parallelogram base Field -->
+                            <input placeholder="base" type="text"
+                                class="border text-xl w-24 px-3 py-1 bg-gray-200 rounded" name="" id="parallelogram-base">
+                            <span class="ml-3 font-bold">cm</span>
+                            <!-- parallelogram height field -->
+                            <input placeholder="height" type="text"
+                                class="ml-3 border text-xl w-24 px-3 py-1 bg-gray-200 rounded" name=""
+                                id="parallelogram-height">
+                            <span class="ml-3 font-bold">cm</span>
+                        </p>
+                        <p class="text-2xl font-medium">Area: <span id="parallelogram-area" class="text-green-600"></span>
+                            cm<sup>2</sup></p>
+                        <div onclick="calculateParallelogramArea()" class="card-actions justify-end">
+                            <button class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ellipse Card -->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure><img src="/images/ellipse.png" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title font-bold">Ellipse</h2 >
+                        <p>Area (A) = πab</p>
+                        <p>
+                            <!-- Ellipse major Field -->
+                            <input placeholder="large" type="text"
+                                class="border text-xl w-24 px-3 py-1 bg-gray-200 rounded" name="" id="ellipse-major-radius">
+                            <span class="ml-3 font-bold">cm</span>
+                            <!-- Ellipse minor field -->
+                            <input placeholder="short" type="text"
+                                class="ml-3 border text-xl w-24 px-3 py-1 bg-gray-200 rounded" name=""
+                                id="ellipse-minor-radius">
+                            <span class="ml-3 font-bold">cm</span>
+                        </p>
+                        <p class="text-2xl font-medium">Area: <span id="ellipse-area" class="text-green-600"></span>
+                            cm<sup>2</sup></p>
+                        <div onclick="calculateEllipseArea()" class="card-actions justify-end">
+                            <button class="btn btn-primary w-full">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <!-- ---------------------------------------------------------------------- -->
                 <!-- Second Card -->
                 <div class="card w-96 bg-base-100 shadow-xl">
                     <figure><img src="/images/rectangle.png" alt="Shoes" /></figure>
