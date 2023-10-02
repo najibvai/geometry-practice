@@ -19,6 +19,7 @@ function calculateTriangleArea() {
     // show triangle Area 
     const areaSpan = document.getElementById('triangle-area');
     areaSpan.innerText = area;
+    addToCalculationEntry('triangle', area);
 }
 
 
@@ -45,24 +46,34 @@ function calculateRectangleArea() {
 
     const rectangleAreaSpan = document.getElementById('rectangle-area');
     rectangleAreaSpan.innerText = area;
+    addToCalculationEntry('rectangle', area);
 }
 
 // --------------------------------------------------------------
 
 function calculateParallelogramArea(){
     const base = getInputValue('parallelogram-base');
-    console.log(base);
     const height = getInputValue('parallelogram-height');
-    console.log(height);
     const area = base * height;
     setElementInnerText('parallelogram-area', area)
+
+
+    addToCalculationEntry('parallelogram', area);
 }
+
+
+
 // --------------------------------------------------------------
+
+
+
+
+
 
 function calculateEllipseArea(){
     const majorRadius = getInputValue('ellipse-major-radius');
     const minorRadius = getInputValue('ellipse-minor-radius');
-
+    
     if(isNaN(majorRadius) || isNaN(minorRadius)){
         alert('Please type a number');
         return;
@@ -70,6 +81,7 @@ function calculateEllipseArea(){
     const ellipseTwoDecimal = 3.14 * majorRadius * minorRadius;
     const ellipseResult = ellipseTwoDecimal.toFixed(2);
     setElementInnerText('ellipse-area', ellipseResult);
+    addToCalculationEntry('ellipse', ellipseResult);
 }
 // --------------------------------------------------------------
 
@@ -88,3 +100,17 @@ function setElementInnerText(elementId, result){
     element.innerText = result;
 }
 
+
+
+// -------------------------------------------------------
+function addToCalculationEntry(areaType, area){
+    console.log(areaType+ ' ' +area);
+    const calculationEntry = document.getElementById('calculation-entry');
+
+    const count = calculationEntry.childElementCount;
+
+    const p = document.createElement('p');
+    p.classList.add('my-4');
+    p.innerHTML = `${count + 1}. ${areaType} ${area} cm<sup>2</sup> <button class="btn btn-success">Convert</button>`;
+    calculationEntry.appendChild(p);
+}
